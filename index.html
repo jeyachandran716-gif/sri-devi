@@ -6,9 +6,38 @@
     <title>SRI DEVI</title>
     <link rel="stylesheet" href="index.css">
     <link rel="icon" href="static-images/srimain.jpeg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Ramaraja&family=Rye&display=swap" rel="stylesheet">
+    <script>
+        const slides = document.querySelector(".slides");
+const images = document.querySelectorAll(".slides img");
+
+let index = 0;
+
+function slideNext() {
+    index++;
+
+    slides.style.transition = "transform 1s ease";
+    slides.style.transform = `translateX(-${index * 100}%)`;
+}
+
+setInterval(slideNext, 4000);
+
+slides.addEventListener("transitionend", () => {
+
+    // If we're on the cloned first slide
+    if(index === images.length - 1){
+
+        slides.style.transition = "none";
+        index = 0;
+        slides.style.transform = "translateX(0)";
+
+        // Force browser repaint
+        slides.offsetHeight;
+
+        slides.style.transition = "transform 1s ease";
+    }
+
+});
+    </script>
 <body>
     <header>
         <img class="pr1" src="static-images/sribgremove.png" alt="">
@@ -40,7 +69,7 @@
     <div class="free">
         <h3 class="free2">🎉 FREE DELIVERY on orders above 2000 - Minimum 3 Case</h3>
     </div>
-<script src="index.js"></script>
+<!-- <script src="index.js"></script> -->git
 </body>
 </html>
 
