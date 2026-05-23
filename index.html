@@ -6,22 +6,26 @@
     <title>SRI DEVI</title>
     <link rel="stylesheet" href="index.css">
     <link rel="icon" href="static-images/srimain.jpeg">
-    <script>
-        const slides = document.querySelector(".slides");
-const images = document.querySelectorAll(".slides img");
+    <script lang="javascript">
+   window.onload = () => {
 
-let index = 0;
+    const slides = document.querySelector(".slides");
+    const images = document.querySelectorAll(".slides img");
 
-function slideNext() {
-    index++;
+    let index = 0;
 
-    slides.style.transition = "transform 1s ease";
-    slides.style.transform = `translateX(-${index * 100}%)`;
-}
+    function slideNext(){
 
-setInterval(slideNext, 4000);
+        index++;
 
-slides.addEventListener("transitionend", () => {
+        slides.style.transform =`translateX(-${index * 100}%)`;
+    
+
+    }
+
+    setInterval(slideNext, 3000);
+
+    slides.addEventListener("transitionend", () => {
 
     // If we're on the cloned first slide
     if(index === images.length - 1){
@@ -37,6 +41,8 @@ slides.addEventListener("transitionend", () => {
     }
 
 });
+
+}
     </script>
 <body>
     <header>
@@ -51,9 +57,9 @@ slides.addEventListener("transitionend", () => {
     <div class="mob-ser">
         <input type="text" placeholder="    Search" id="ser3">
     </div>
-    <div class="slider">
+    <div class="slider" id="slider">
 
-        <div class="slides">
+        <div class="slides" id="slides">
 
             <img src="static-images/tam3.jpeg">
             <img src="static-images/eggcom.png">
@@ -61,7 +67,7 @@ slides.addEventListener("transitionend", () => {
             <img src="static-images/cokecom1 - Copy.jpeg">
             <img src="static-images/pepsicom.png">
             <img src="static-images/bislericom.png">
-            //clone
+            <!-- clon -->
             <img src="static-images/tam3.jpeg">
         </div>
 
@@ -69,7 +75,6 @@ slides.addEventListener("transitionend", () => {
     <div class="free">
         <h3 class="free2">🎉 FREE DELIVERY on orders above 2000 - Minimum 3 Case</h3>
     </div>
-<!-- <script src="index.js"></script> -->git
 </body>
 </html>
 

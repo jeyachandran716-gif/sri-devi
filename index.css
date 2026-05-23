@@ -80,6 +80,7 @@ header h4 {
 .slider{
     width:100%;
     overflow:hidden;
+    position: relative;
 }
 
 .slides{
